@@ -44,7 +44,8 @@
   .profile { text-align:center; margin:.5rem 0 1.5rem; }
   .avatar { width:150px; height:150px; border-radius:50%; margin:0 auto 14px; display:flex; align-items:center; justify-content:center; font-size:3.4rem; color:#fff; font-weight:600; letter-spacing:.02em; overflow:hidden; object-fit:cover; object-position:center 22%;
     background:linear-gradient(135deg,#3b74ab,#1d3f61); box-shadow:0 10px 30px -8px rgba(0,0,0,.25); }
-  .avatar img { width:100%; height:100%; object-fit:cover; object-position:center 22%; }
+  .avatar { position:relative; }
+  .avatar img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 22%; }
   .profile h2 { font-size:1.5rem; font-weight:700; letter-spacing:-.01em; }
 
   .nav-item { display:flex; align-items:center; gap:12px; position:relative; margin:4px 2px; padding:9px 12px; font-size:1.1rem; border-radius:10px; overflow:hidden; isolation:isolate; white-space:nowrap; cursor:pointer; transition:padding-left .35s cubic-bezier(.22,1,.36,1), color .25s; }
@@ -195,8 +196,7 @@
   <!-- Left sidebar -->
   <aside id="side-nav">
     <div class="profile">
-      <!-- To use a photo: upload photo.jpg to the repo and replace the "SJ" below with: <img src="photo.jpg" alt="Sanjana Jain"> -->
-      <div class="avatar" role="img" aria-label="Sanjana Jain">SJ</div>
+      <div class="avatar" role="img" aria-label="Sanjana Jain"><span>SJ</span><img src="photo.jpg" alt="Sanjana Jain" onerror="this.remove()"></div>
       <h2>Sanjana Jain</h2>
     </div>
 
@@ -415,11 +415,11 @@
         <p>AP Suresh*, S Jain*, P Noinongyao, A Ganguly · <a href="https://openaccess.thecvf.com/content/WACV2024/papers/Suresh_FastCLIPstyler_Optimisation-Free_Text-Based_Image_Style_Transfer_Using_Style_Representations_WACV_2024_paper.pdf" target="_blank" rel="noopener">Paper</a> · <a href="https://sertiscorp.medium.com/unleashing-creativity-with-fastclipstyler-personalized-image-filters-at-your-fingertips-e0c982770d9c" target="_blank" rel="noopener">Blog</a></p>
       </div>
       <div class="rec">
-        <div class="rec-top"><div class="rec-title"><b>Amortized Variational Inference: A Systematic Review</b></div><div class="rec-date">JAIR 78</div></div>
+        <div class="rec-top"><div class="rec-title"><b>Amortized Variational Inference: A Systematic Review</b></div><div class="rec-date">JAIR 2023</div></div>
         <p>A Ganguly, S Jain, U Watchareeruetai · <a href="https://jair.org/index.php/jair/article/view/14258/26970" target="_blank" rel="noopener">Paper</a> · <a href="https://sertiscorp.medium.com/amortized-variational-inference-an-overview-f246c1e11e11" target="_blank" rel="noopener">Blog</a></p>
       </div>
       <div class="rec">
-        <div class="rec-top"><div class="rec-title"><b>LOTR: Face Landmark Localization Using Localization Transformer</b></div><div class="rec-date">IEEE Access 10</div></div>
+        <div class="rec-top"><div class="rec-title"><b>LOTR: Face Landmark Localization Using Localization Transformer</b></div><div class="rec-date">IEEE Access 2022</div></div>
         <p>U Watchareeruetai, B Sommana, S Jain, et al. · <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9705593" target="_blank" rel="noopener">Paper</a> · <a href="https://sertiscorp.medium.com/lotr-face-landmark-localization-using-localization-transformer-6626e8d7cf17" target="_blank" rel="noopener">Blog</a></p>
       </div>
       <div class="rec">
@@ -436,8 +436,24 @@
 
       <div class="rec">
         <div class="rec-top"><div class="rec-title"><b>GAN Inversion: A brief walkthrough</b></div><div class="rec-date">Four-part series</div></div>
-        <p><a href="https://sertiscorp.medium.com/gan-inversion-a-brief-walkthrough-part-i-bc2ee1b73253" target="_blank" rel="noopener">Read Part I on Medium</a></p>
+        <p><a href="https://sertiscorp.medium.com/gan-inversion-a-brief-walkthrough-part-i-bc2ee1b73253" target="_blank" rel="noopener">Read on Medium</a></p>
       </div>
+
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>Unleashing Creativity with FastCLIPstyler: Personalized Image Filters at Your Fingertips</b></div><div class="rec-date">Blog</div></div>
+        <p><a href="https://sertiscorp.medium.com/unleashing-creativity-with-fastclipstyler-personalized-image-filters-at-your-fingertips-e0c982770d9c" target="_blank" rel="noopener">Read on Medium</a></p>
+      </div>
+
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>Sertis Recommends: Our Solutions for Personalized Recommendation Systems</b></div><div class="rec-date">Blog</div></div>
+        <p><a href="https://sertiscorp.medium.com/sertis-recommends-our-solutions-for-personalized-recommendation-systems-d8c4bbfe7a88" target="_blank" rel="noopener">Read on Medium</a></p>
+      </div>
+
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>Sertis Optical Character Recognition System</b></div><div class="rec-date">Blog</div></div>
+        <p><a href="https://sertiscorp.medium.com/sertis-optical-character-recognition-system-b135322c0f63" target="_blank" rel="noopener">Read on Medium</a></p>
+      </div>
+
       <div class="rec">
         <div class="rec-top"><div class="rec-title"><b>AI and Data Business: Women on the Rise</b></div><div class="rec-date">Feature</div></div>
         <p><a href="https://medium.com/@sertiscorp/ai-data-business-women-on-the-rise-part-i-e6fc32ddd8bf" target="_blank" rel="noopener">Read on Medium</a></p>
