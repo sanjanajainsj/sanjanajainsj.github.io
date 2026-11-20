@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sanjana Jain · Senior AI Researcher</title>
+<meta name="description" content="Sanjana Jain is a Senior AI Researcher with 9 years of experience in generative AI, NLP and computer vision.">
+<meta name="theme-color" content="#2f5d8a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root {
+    --accent:#2f5d8a; --accent-dark:#1d3f61; --accent-rgb:47,93,138;
+    --ink:#1f1f1f; --ink2:#2a2a2a; --muted:#5a5a5a; --line:#ececec;
+    --page:#f8f8f9; --card:#fff;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; font-family:"STIX Two Text", Georgia, "Times New Roman", serif; color:var(--ink); background:var(--page); -webkit-font-smoothing:antialiased; line-height:1.5; }
+  a { text-decoration:none; color:inherit; }
+  a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:4px; }
+  h1,h2,h3,h4,h5 { margin:0; }
+
+  /* ---------- Landing ---------- */
+  #landing { height:190px; position:relative; overflow:hidden; color:#fff; text-align:center;
+    background:
+      radial-gradient(1100px 600px at 20% 10%, rgba(120,170,230,.35), transparent 60%),
+      radial-gradient(900px 600px at 85% 85%, rgba(47,93,138,.55), transparent 60%),
+      linear-gradient(160deg, #0f1c2e 0%, #1a2f4a 55%, #223f63 100%); }
+  #landing::after { content:""; position:absolute; inset:0; background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.05) 45%,rgba(0,0,0,.45)); pointer-events:none; }
+  #landing .content { position:absolute; z-index:2; left:0; right:0; top:50%; transform:translateY(-50%); padding:0 4vw; }
+  #landing h1 { font-size:3rem; font-weight:400; letter-spacing:-.01em; margin-bottom:.3rem; text-shadow:0 2px 30px rgba(0,0,0,.35); }
+  #landing .title { font-size:1.15rem; text-shadow:0 1px 20px rgba(0,0,0,.5); }
+  #landing .subtitle { display:block; margin-top:.2rem; font-size:.95rem; font-weight:400; letter-spacing:.04em; opacity:.85; }
+
+  /* ---------- Layout ---------- */
+  #details { display:flex; min-height:100vh; background:var(--page); }
+  #side-nav { flex:0 0 20vw; min-width:240px; max-width:320px; position:sticky; top:0; height:100vh; padding:5vh 24px 3vh; display:flex; flex-direction:column; background:#fff; box-shadow:20px 0 40px -15px rgba(0,64,128,.07); z-index:5; }
+  #main { flex:1; min-width:0; }
+
+  /* Sidebar */
+  .profile { text-align:center; margin:.5rem 0 1.5rem; }
+  .avatar { width:150px; height:150px; border-radius:50%; margin:0 auto 14px; display:flex; align-items:center; justify-content:center; font-size:3.4rem; color:#fff; font-weight:600; letter-spacing:.02em; overflow:hidden; object-fit:cover; object-position:center 22%;
+    background:linear-gradient(135deg,#3b74ab,#1d3f61); box-shadow:0 10px 30px -8px rgba(0,0,0,.25); }
+  .avatar img { width:100%; height:100%; object-fit:cover; object-position:center 22%; }
+  .profile h2 { font-size:1.5rem; font-weight:700; letter-spacing:-.01em; }
+
+  .nav-item { display:flex; align-items:center; gap:12px; position:relative; margin:4px 2px; padding:9px 12px; font-size:1.1rem; border-radius:10px; overflow:hidden; isolation:isolate; white-space:nowrap; cursor:pointer; transition:padding-left .35s cubic-bezier(.22,1,.36,1), color .25s; }
+  .nav-item i { width:22px; text-align:center; font-size:1rem; transition:transform .35s cubic-bezier(.22,1,.36,1), color .25s; }
+  .nav-item::before { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(var(--accent-rgb),.16), rgba(var(--accent-rgb),.06)); transform:scaleX(0); transform-origin:left center; transition:transform .4s cubic-bezier(.22,1,.36,1); z-index:-1; border-radius:10px; }
+  .nav-item:hover, .nav-item.active { padding-left:18px; color:var(--accent-dark); }
+  .nav-item.active { font-weight:600; }
+  .nav-item:hover::before, .nav-item.active::before { transform:scaleX(1); }
+  .nav-item:hover i, .nav-item.active i { transform:scale(1.12); color:var(--accent); }
+
+  .resume-btn { display:block; width:60%; margin:1.2rem auto 0; text-align:center; border-radius:25px; border:1px solid var(--accent); color:var(--accent); font-style:italic; padding:5px 0; transition:background .25s,color .25s; }
+  .resume-btn:hover { background:var(--accent); color:#fff; }
+
+  #availability { margin-top:auto; margin-bottom:1.1rem; padding:0 6%; text-align:center; }
+  #availability p { margin:0; font-size:.8rem; font-weight:600; color:var(--muted); line-height:1.4; padding:8px 10px; border-top:1px solid #e6e6e6; border-bottom:1px solid #e6e6e6; font-family:system-ui,-apple-system,"Segoe UI",sans-serif; }
+  .contacts { display:flex; justify-content:space-between; padding:0 6%; margin-bottom:.5rem; }
+  .contacts a { position:relative; font-size:1.45rem; color:#3c3c3c; transition:color .25s, transform .25s; display:inline-block; }
+  .contacts a:hover { color:#f9873b; transform:translateY(-3px); }
+  .contacts a::after { content:attr(data-tip); position:absolute; bottom:calc(100% + 8px); left:50%; transform:translateX(-50%) translateY(4px); padding:7px 12px; background:#1f1f1f; color:#fff; border-radius:8px; font:500 .8rem/1.35 system-ui,sans-serif; width:max-content; opacity:0; pointer-events:none; transition:opacity .2s, transform .2s; z-index:50; }
+  .contacts a:hover::after { opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* Sections */
+  .section { padding:25px 25px 4vh; margin-top:8vh; scroll-margin-top:2vh; }
+  .section > h1 { text-align:center; font-size:2.5rem; font-weight:700; letter-spacing:-.01em; margin-bottom:2.5rem; }
+  #about { margin-top:0; padding:8vh 5vw 4vh; }
+  #about h2 { font-size:2rem; font-weight:700; letter-spacing:-.01em; margin-bottom:1.25rem; }
+  #about p { font-size:1.1rem; line-height:1.7; color:var(--ink2); max-width:min(1080px,92%); margin:0 0 1rem; text-wrap:pretty; }
+  #about p a { color:var(--accent); border-bottom:1px solid transparent; transition:border-color .2s; }
+  #about p a:hover { border-bottom-color:var(--accent); }
+  .wave { display:inline-block; transform-origin:70% 70%; animation:wave 2.5s infinite; }
+  @keyframes wave { 0%{transform:rotate(0)} 10%{transform:rotate(14deg)} 20%{transform:rotate(-8deg)} 30%{transform:rotate(14deg)} 40%{transform:rotate(-4deg)} 50%{transform:rotate(10deg)} 60%,100%{transform:rotate(0)} }
+
+  #focus { margin-top:3rem; max-width:min(1080px,92%); background:#f4f7f9; padding:1.5rem 1.75rem; border-radius:18px; border:1px solid #e4eaee; }
+  #focus h3 { font-size:1.25rem; font-weight:400; color:var(--ink2); margin-bottom:1.25rem; }
+  .focus-row { display:flex; flex-wrap:wrap; gap:1rem; }
+  .focus-item { position:relative; min-width:92px; min-height:84px; padding:12px; border-radius:12px; border:1px solid transparent; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; text-align:center; cursor:default; transition:transform .25s, box-shadow .25s, border-color .25s, background .25s; }
+  .focus-item i { font-size:2.2rem; color:var(--ink); }
+  .focus-item span { font-size:.85rem; color:var(--muted); line-height:1.2; }
+  .focus-item:hover { transform:translateY(-3px); background:#fff; box-shadow:0 8px 20px -8px rgba(0,64,128,.15); border-color:#d3dfe9; }
+
+
+  /* About: CV highlights */
+
+  /* Journey */
+  #journey { max-width:min(1200px,95%); margin-left:auto; margin-right:auto; padding-left:2.5vw; padding-right:2.5vw; }
+  ol.timeline { list-style:none; padding:0; margin:0; position:relative; }
+  ol.timeline::before { content:""; position:absolute; left:27px; top:24px; bottom:24px; width:2px; border-radius:2px; background:linear-gradient(var(--accent), rgba(var(--accent-rgb),.18)); z-index:1; }
+  .tl-item { position:relative; padding-left:76px; margin-bottom:1.75rem; }
+  .tl-marker { position:absolute; left:12px; top:18px; width:32px; height:32px; border-radius:50%; background:#fff; border:2px solid var(--accent); color:var(--accent); z-index:2; display:flex; align-items:center; justify-content:center; font-size:13px; box-shadow:0 2px 8px -2px rgba(var(--accent-rgb),.25); transition:transform .25s, background .25s, color .25s, box-shadow .25s; }
+  .tl-item:hover .tl-marker { transform:scale(1.1); background:var(--accent); color:#fff; box-shadow:0 4px 14px -2px rgba(var(--accent-rgb),.45); }
+  .tl-card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 22px; box-shadow:0 4px 18px -8px rgba(0,64,128,.1); transition:box-shadow .25s, transform .25s, border-color .25s; text-align:left; }
+  .tl-card:hover { box-shadow:0 12px 32px -10px rgba(0,64,128,.18); border-color:#d3dfe9; transform:translateY(-2px); }
+  .tl-header { display:grid; grid-template-columns:48px 1fr auto; column-gap:14px; align-items:center; }
+  .tl-logo { width:48px; height:48px; border-radius:10px; background:#eef3f8; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--accent-dark); font-size:1rem; font-family:system-ui,sans-serif; }
+  .tl-org { font-size:1.15rem; font-weight:700; line-height:1.2; letter-spacing:-.005em; }
+  .tl-role { font-size:.98rem; color:var(--muted); margin-top:3px; line-height:1.4; }
+  .tl-date { font-size:.88rem; color:var(--accent); font-weight:600; white-space:nowrap; font-family:system-ui,sans-serif; }
+  .tl-sub { font:600 .8rem system-ui,sans-serif; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; margin:16px 0 0 62px; }
+  .tl-sub + .tl-bullets { margin-top:6px; }
+  .tl-bullets { list-style:none; padding-left:62px; margin:12px 0 0; }
+  .tl-bullets li { position:relative; padding-left:14px; margin-bottom:5px; color:var(--ink2); font-size:.98rem; line-height:1.55; }
+  .tl-bullets li::before { content:""; position:absolute; left:0; top:.65em; width:5px; height:5px; border-radius:50%; background:var(--accent); }
+
+  /* Skills */
+  #skills { max-width:min(1100px,94%); margin-left:auto; margin-right:auto; padding-left:2.5vw; padding-right:2.5vw; text-align:left; }
+  .skills-grid { display:flex; flex-direction:column; gap:1.5rem; }
+  .skill-category { display:grid; grid-template-columns:160px 1fr; gap:1rem; align-items:flex-start; }
+  .skill-label { font:600 .85rem system-ui,sans-serif; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; margin:8px 0 0; padding-top:4px; }
+  .pills { display:flex; flex-wrap:wrap; gap:8px; }
+  .pill { display:inline-flex; align-items:center; gap:8px; padding:7px 14px 7px 12px; background:#fff; border:1px solid #e6e6e6; border-radius:999px; font-size:.95rem; font-weight:600; color:var(--ink2); line-height:1.2; cursor:default; transition:background .2s, border-color .2s, transform .2s, box-shadow .2s; }
+  .pill i { color:var(--accent); font-size:.95rem; width:18px; text-align:center; }
+  .pill:hover { background:#f2f7fb; border-color:#c8d9e7; transform:translateY(-2px); box-shadow:0 4px 12px -4px rgba(var(--accent-rgb),.25); }
+
+  /* Recognition */
+  #publications, #recognition { max-width:min(900px,92%); margin-left:auto; margin-right:auto; padding-left:2.5vw; padding-right:2.5vw; display:grid; grid-template-columns:1fr; row-gap:14px; text-align:left; }
+  #publications > h1, #recognition > h1 { margin-bottom:1.5rem; }
+  .rec-sub { font:600 .85rem system-ui,sans-serif; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; margin:1.4rem 0 .2rem; }
+  .rec { background:#fff; border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:12px; padding:18px 22px; box-shadow:0 2px 12px -4px rgba(0,64,128,.08); transition:box-shadow .25s, transform .25s, border-left-color .25s; }
+  .rec:hover { box-shadow:0 8px 24px -8px rgba(0,64,128,.15); transform:translateY(-2px); border-left-color:var(--accent-dark); }
+  .rec-top { display:flex; justify-content:space-between; gap:16px; align-items:baseline; flex-wrap:wrap; }
+  .rec-title { font-size:1.1rem; }
+  .rec-date { color:var(--accent); font-weight:600; font-size:.95rem; text-align:right; font-family:system-ui,sans-serif; }
+  .rec p { color:var(--muted); font-size:.98rem; margin:6px 0 0; }
+  .rec p a { color:var(--accent); border-bottom:1px solid transparent; transition:border-color .2s; }
+  .rec p a:hover { border-bottom-color:var(--accent); }
+  .note { font-size:.9rem; color:var(--muted); }
+
+  footer#copyright { background:#f4f4f4; color:var(--muted); text-align:center; padding:1.6vh; font-size:.9rem; margin-top:6vh; }
+  footer#copyright b { color:var(--ink); font-weight:600; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px) {
+    #side-nav { display:none; }
+    #landing { height:150px; }
+    #landing h1 { font-size:2.2rem; }
+    .section { padding:20px 5vw 4vh; margin-top:6vh; }
+    #about { padding-left:5vw; padding-right:5vw; }
+    #about p { font-size:1rem; line-height:1.65; }
+    #about h2 { font-size:1.6rem; }
+    .section > h1 { font-size:2rem; margin-bottom:1.5rem; }
+    .skill-category { grid-template-columns:1fr; gap:.5rem; }
+    .skill-label { margin-bottom:0; }
+    #journey { padding-left:4vw; padding-right:4vw; }
+    ol.timeline::before { left:19px; }
+    .tl-item { padding-left:56px; }
+    .tl-marker { left:4px; width:28px; height:28px; font-size:11px; }
+    .tl-card { padding:14px 16px; }
+    .tl-bullets { padding-left:0; margin-top:10px; }
+    .tl-sub { margin-left:0; }
+    .tl-header { grid-template-columns:40px 1fr; row-gap:4px; }
+    .tl-logo { grid-row:1/3; width:40px; height:40px; }
+    .tl-headings { grid-column:2; }
+    .tl-date { grid-column:2; font-size:.82rem; }
+    .tl-org { font-size:1.05rem; }
+    .rec-date { text-align:left; width:100%; }
+    #publications, #recognition { padding-left:5vw; padding-right:5vw; }
+    .mobile-bar { display:flex !important; }
+  }
+  .mobile-bar { display:none; position:sticky; top:0; z-index:10; background:#fff; border-bottom:1px solid var(--line); padding:10px 16px; gap:18px; justify-content:center; font-size:1rem; box-shadow:0 4px 14px -8px rgba(0,64,128,.15); }
+  .mobile-bar a { color:var(--muted); }
+  .mobile-bar a.active { color:var(--accent); font-weight:600; }
+  @media (prefers-reduced-motion:reduce) { *,::before,::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; } }
+</style>
+</head>
+<body>
+
+<!-- ============ LANDING ============ -->
+<div id="landing">
+  <div class="content">
+    <h1>Sanjana Jain</h1>
+    <div class="title">Senior AI Researcher
+      <span class="subtitle">Generative AI · NLP · Computer Vision</span>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-bar" id="mobile-bar">
+  <a href="#about" data-s="about">About</a>
+  <a href="#journey" data-s="journey">Journey</a>
+  <a href="#skills" data-s="skills">Skills</a>
+  <a href="#publications" data-s="publications">Publications</a>
+  <a href="#recognition" data-s="recognition">Recognition</a>
+</div>
+
+<!-- ============ DETAILS ============ -->
+<div id="details">
+
+  <!-- Left sidebar -->
+  <aside id="side-nav">
+    <div class="profile">
+      <!-- To use a photo: upload photo.jpg to the repo and replace the "SJ" below with: <img src="photo.jpg" alt="Sanjana Jain"> -->
+      <div class="avatar" role="img" aria-label="Sanjana Jain">SJ</div>
+      <h2>Sanjana Jain</h2>
+    </div>
+
+    <nav>
+      <a href="#about" data-s="about"><div class="nav-item"><i class="fas fa-user"></i><span>About</span></div></a>
+      <a href="#journey" data-s="journey"><div class="nav-item"><i class="fas fa-briefcase"></i><span>Journey</span></div></a>
+      <a href="#skills" data-s="skills"><div class="nav-item"><i class="fas fa-chart-simple"></i><span>Skills</span></div></a>
+      <a href="#publications" data-s="publications"><div class="nav-item"><i class="fas fa-book-open"></i><span>Publications</span></div></a>
+      <a href="#recognition" data-s="recognition"><div class="nav-item"><i class="fas fa-star"></i><span>Recognition</span></div></a>
+    </nav>
+
+    <!-- Resume: upload resume.pdf to the repo, then uncomment -->
+    <!-- <a class="resume-btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a> -->
+
+    <div id="availability"><p>Based in Toronto, Canada</p></div>
+
+    <div class="contacts">
+      <a href="mailto:sanjanajain200@gmail.com" data-tip="Email me" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/sanjana-jain-218569136/" data-tip="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+      <a href="https://scholar.google.com/citations?user=BqAdTfcAAAAJ&hl=en" data-tip="Google Scholar" aria-label="Google Scholar" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i></a>
+      <a href="https://github.com/sanjanajainsj" data-tip="GitHub" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+      <a href="https://medium.com/@sanjanainsj" data-tip="Medium" aria-label="Medium" target="_blank" rel="noopener"><i class="fab fa-medium"></i></a>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main id="main">
+
+    <section id="about" class="section">
+      <h2>Hi, I'm Sanjana <span class="wave">👋</span></h2>
+      <p>Senior AI Researcher with 9 years of experience in generative AI, NLP and computer vision. I bridge research and production systems, and I've authored four peer-reviewed publications, including a <a href="https://openaccess.thecvf.com/content/WACV2024/papers/Suresh_FastCLIPstyler_Optimisation-Free_Text-Based_Image_Style_Transfer_Using_Style_Representations_WACV_2024_paper.pdf" target="_blank" rel="noopener">WACV 2024</a> paper on real-time, edge-deployable image style transfer.</p>
+      <p>Since 2017 I've built face recognition, license plate recognition, person tracking and re-identification, and Thai-language OCR systems, several now in real-world use. My face recognition model ranked in the top 20 globally on the NIST FRVT leaderboard, and my landmark localisation work was published in <em>IEEE Access</em>.</p>
+      <p>One of my favorite projects was brain decoding: I led research on reconstructing the images people see from 3D fMRI brain scans, using self-supervised learning (JEPA), diffusion models and world models.</p>
+      <p>Today I'm a Senior Data Scientist at Valeris in Toronto, building an LLM-powered system that turns long healthcare policy documents into structured data. I've also supervised small teams of data scientists along the way.</p>
+
+      <div id="focus">
+        <h3>Things I work on…</h3>
+        <div class="focus-row">
+          <div class="focus-item"><i class="fas fa-wand-magic-sparkles"></i><span>Generative AI</span></div>
+          <div class="focus-item"><i class="fas fa-comments"></i><span>LLMs &amp; RAG</span></div>
+          <div class="focus-item"><i class="fas fa-eye"></i><span>Computer vision</span></div>
+          <div class="focus-item"><i class="fas fa-brain"></i><span>Brain decoding</span></div>
+          <div class="focus-item"><i class="fas fa-file-lines"></i><span>Document AI</span></div>
+          <div class="focus-item"><i class="fas fa-thumbs-up"></i><span>Recommendation systems</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey" class="section">
+      <h1>Journey</h1>
+      <ol class="timeline">
+
+        <li class="tl-item">
+          <div class="tl-marker"><i class="fas fa-briefcase"></i></div>
+          <div class="tl-card">
+            <div class="tl-header">
+              <div class="tl-logo">V</div>
+              <div class="tl-headings">
+                <div class="tl-org">Policy Reporter by Valeris</div>
+                <div class="tl-role">Senior Data Scientist · Toronto, Canada</div>
+              </div>
+              <div class="tl-date">Oct 2025 – Present</div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Architected an LLM-powered healthcare policy intelligence system end to end, using advanced document parsing with VLMs, agentic workflows and retrieval-based extraction to turn long, complex policy documents into structured data, with <b>98%+ extraction accuracy</b>.</li>
+              <li>Led the adoption of Langfuse for LLM observability and prompt management within the company, winning SVP approval with a cost-benefit analysis and feature evaluation, then onboarded the team with training.</li>
+              <li>Built LLM observability and evaluation workflows with Langfuse: agent tracing, execution monitoring, cost tracking, and analysis of model outputs to find failure patterns and improve reliability.</li>
+              <li>Led technical journal clubs on emerging research in generative AI, agentic systems and trustworthy AI.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-marker"><i class="fas fa-briefcase"></i></div>
+          <div class="tl-card">
+            <div class="tl-header">
+              <div class="tl-logo">S</div>
+              <div class="tl-headings">
+                <div class="tl-org">Sertis Co., Ltd</div>
+                <div class="tl-role">AI Researcher → Senior AI Researcher (promoted Feb 2022) · Bangkok, Thailand</div>
+              </div>
+              <div class="tl-date">Jul 2019 – Jul 2025</div>
+            </div>
+            <div class="tl-sub">Generative AI &amp; LLMs</div>
+            <ul class="tl-bullets">
+              <li>Led end-to-end development of an enterprise AI platform with an on-premises private LLM: LangChain RAG pipelines with vector retrieval and PEFT/LoRA fine-tuning of open-source LLMs, enabling secure, domain-specific AI over proprietary data without cloud exposure.</li>
+              <li>The secure RAG search and question-answering system drove a <b>12% improvement in sales conversion</b> for a banking client.</li>
+              <li>Fine-tuned LLaMA-7B with LoRA on 5,000+ policy documents for an oil and gas company.</li>
+            </ul>
+            <div class="tl-sub">Computer vision research</div>
+            <ul class="tl-bullets">
+              <li>Co-led and published <b>FastCLIPStyler</b> at WACV 2024: the first real-time, embedding-based, text-guided style transfer model that runs on edge devices without internet.</li>
+              <li>Led research on reconstructing visual stimuli from 3D fMRI brain scans using self-supervised learning (JEPA) and diffusion models, and secured internal resources by presenting the project&rsquo;s value.</li>
+              <li>Co-authored <b>LOTR</b> (IEEE Access) on transformer-based facial landmark localisation, and a systematic review of amortized variational inference in <em>JAIR</em>.</li>
+              <li>Worked on face recognition, traffic monitoring and sports analytics; the face recognition model ranked in the <b>top 20 globally on the NIST FRVT leaderboard</b>.</li>
+            </ul>
+            <div class="tl-sub">Applied ML in production</div>
+            <ul class="tl-bullets">
+              <li>Led Thai-language OCR R&amp;D, with a synthetic data pipeline for Thai script, reaching <b>97% accuracy on ID card extraction</b>; deployed as a Thai National ID card reader for a major bank.</li>
+              <li>Led person re-identification models, and transformer/VAE recommendation models for a leading online retailer, handling <b>1M+ monthly events</b>.</li>
+              <li>Launched a fraud detection system for a funds transfer company that <b>saved $100,000 a year</b>. It processes 100,000+ daily transactions on AWS EMR with PySpark.</li>
+              <li>Led real-time vehicle analytics for a mall chain: YOLO detection with make and model classification (<b>97.1% accuracy across 745 classes</b>) on CCTV, optimised with quantization and TensorRT.</li>
+            </ul>
+            <div class="tl-sub">Leadership</div>
+            <ul class="tl-bullets">
+              <li>Mentored and supervised four researchers delivering computer vision and generative AI to retail, banking, manufacturing and hardware clients.</li>
+              <li>Established organization-wide ML best practices, standardizing development and engineering workflows across teams.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-marker"><i class="fas fa-briefcase"></i></div>
+          <div class="tl-card">
+            <div class="tl-header">
+              <div class="tl-logo">O</div>
+              <div class="tl-headings">
+                <div class="tl-org">OxygenAI Co., Ltd</div>
+                <div class="tl-role">Machine Learning Engineer · Bangkok, Thailand</div>
+              </div>
+              <div class="tl-date">Aug 2018 – Jun 2019</div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Developed and deployed computer vision solutions for retail: license plate detection and recognition for vehicle management, and person detection and tracking to analyze shopper movement and generate retail analytics.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-marker"><i class="fas fa-flask"></i></div>
+          <div class="tl-card">
+            <div class="tl-header">
+              <div class="tl-logo">AIT</div>
+              <div class="tl-headings">
+                <div class="tl-org">AIT AI Center</div>
+                <div class="tl-role">Researcher · Pathumthani, Thailand</div>
+              </div>
+              <div class="tl-date">Jul 2017 – Jun 2018</div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Implemented deep learning systems for face recognition and license plate recognition.</li>
+              <li>The face recognition system from my master&rsquo;s thesis was peer-reviewed and published at IWAIT, with customer recognition and target-individual identification for retail analytics.</li>
+              <li>The license plate recognition system was deployed across multiple locations in Thailand.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-marker"><i class="fas fa-chalkboard-user"></i></div>
+          <div class="tl-card">
+            <div class="tl-header">
+              <div class="tl-logo"><i class="fas fa-chalkboard-user"></i></div>
+              <div class="tl-headings">
+                <div class="tl-org">AI Tutor &amp; Career Mentor</div>
+                <div class="tl-role">Illuminate AI Mentorship Program and Superprof</div>
+              </div>
+              <div class="tl-date">7 years</div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Guided students and industry executives on deep learning, computer vision and LLM applications, turning foundational AI concepts into applied technical skills and career advancement.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="skills" class="section">
+      <h1>Skills</h1>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-label">Generative AI &amp; NLP</div>
+          <div class="pills">
+            <span class="pill"><i class="fas fa-eye"></i>Vision-language models</span>
+            <span class="pill"><i class="fas fa-wand-magic-sparkles"></i>Diffusion models</span>
+            <span class="pill"><i class="fas fa-sliders"></i>LLM fine-tuning (PEFT)</span>
+            <span class="pill"><i class="fas fa-database"></i>RAG</span>
+            <span class="pill"><i class="fas fa-diagram-project"></i>Agentic workflows</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-label">Computer vision</div>
+          <div class="pills">
+            <span class="pill"><i class="fas fa-face-smile"></i>Face recognition</span>
+            <span class="pill"><i class="fas fa-font"></i>OCR</span>
+            <span class="pill"><i class="fas fa-person-walking"></i>Person re-ID</span>
+            <span class="pill"><i class="fas fa-location-crosshairs"></i>Landmark localisation</span>
+            <span class="pill"><i class="fas fa-crosshairs"></i>Detection &amp; tracking</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-label">ML methods</div>
+          <div class="pills">
+            <span class="pill"><i class="fas fa-bolt"></i>Transformers</span>
+            <span class="pill"><i class="fas fa-circle-nodes"></i>VAEs</span>
+            <span class="pill"><i class="fas fa-seedling"></i>Self-supervised learning</span>
+            <span class="pill"><i class="fas fa-thumbs-up"></i>Recommendation systems</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-label">Leadership</div>
+          <div class="pills">
+            <span class="pill"><i class="fas fa-users"></i>Team supervision</span>
+            <span class="pill"><i class="fas fa-compass"></i>Research strategy</span>
+            <span class="pill"><i class="fas fa-chalkboard-user"></i>AI tutor</span>
+            <span class="pill"><i class="fas fa-handshake-angle"></i>Career coach</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="section">
+      <h1>Publications</h1>
+
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>FastCLIPStyler: Optimisation-free Text-based Image Style Transfer Using Style Representations</b></div><div class="rec-date">WACV 2024</div></div>
+        <p>AP Suresh*, S Jain*, P Noinongyao, A Ganguly · <a href="https://openaccess.thecvf.com/content/WACV2024/papers/Suresh_FastCLIPstyler_Optimisation-Free_Text-Based_Image_Style_Transfer_Using_Style_Representations_WACV_2024_paper.pdf" target="_blank" rel="noopener">Paper</a> · <a href="https://sertiscorp.medium.com/unleashing-creativity-with-fastclipstyler-personalized-image-filters-at-your-fingertips-e0c982770d9c" target="_blank" rel="noopener">Blog</a></p>
+      </div>
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>Amortized Variational Inference: A Systematic Review</b></div><div class="rec-date">JAIR 78</div></div>
+        <p>A Ganguly, S Jain, U Watchareeruetai · <a href="https://jair.org/index.php/jair/article/view/14258/26970" target="_blank" rel="noopener">Paper</a> · <a href="https://sertiscorp.medium.com/amortized-variational-inference-an-overview-f246c1e11e11" target="_blank" rel="noopener">Blog</a></p>
+      </div>
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>LOTR: Face Landmark Localization Using Localization Transformer</b></div><div class="rec-date">IEEE Access 10</div></div>
+        <p>U Watchareeruetai, B Sommana, S Jain, et al. · <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9705593" target="_blank" rel="noopener">Paper</a> · <a href="https://sertiscorp.medium.com/lotr-face-landmark-localization-using-localization-transformer-6626e8d7cf17" target="_blank" rel="noopener">Blog</a></p>
+      </div>
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>Customer and target individual face analysis for retail analytics</b></div><div class="rec-date">IWAIT 2018</div></div>
+        <p>NT Karim*, S Jain*, J Moonrinta, MN Dailey, M Ekpanyapong · <a href="https://ieeexplore.ieee.org/document/8369732" target="_blank" rel="noopener">Paper</a></p>
+      </div>
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>Sub-pixel face landmarks using heatmaps and a bag of tricks</b></div><div class="rec-date">arXiv</div></div>
+        <p>SWF Earp, A Samacoits, S Jain, et al. · <a href="https://arxiv.org/pdf/2103.03059" target="_blank" rel="noopener">Paper</a></p>
+      </div>
+      <div class="note">* Equal contribution</div>
+
+      <div class="rec-sub">Blogs &amp; features</div>
+
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>GAN Inversion: A brief walkthrough</b></div><div class="rec-date">Four-part series</div></div>
+        <p><a href="https://sertiscorp.medium.com/gan-inversion-a-brief-walkthrough-part-i-bc2ee1b73253" target="_blank" rel="noopener">Read Part I on Medium</a></p>
+      </div>
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>AI and Data Business: Women on the Rise</b></div><div class="rec-date">Feature</div></div>
+        <p><a href="https://medium.com/@sertiscorp/ai-data-business-women-on-the-rise-part-i-e6fc32ddd8bf" target="_blank" rel="noopener">Read on Medium</a></p>
+      </div>
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>A Day in the Life of an AI Researcher</b></div><div class="rec-date">Feature</div></div>
+        <p><a href="https://sertiscorp.medium.com/a-day-in-the-life-of-anji-sertis-passionate-ai-researcher-1a5805ad8ba2" target="_blank" rel="noopener">Read on Medium</a></p>
+      </div>
+    </section>
+
+    <section id="recognition" class="section">
+      <h1>Recognition</h1>
+
+
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>Top 20 globally on the NIST FRVT leaderboard</b></div><div class="rec-date">Sertis</div></div>
+        <p>Face recognition model built by the Sertis computer vision team.</p>
+      </div>
+
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>Hisamatsu Prize for most outstanding performance in Computer Science</b></div><div class="rec-date">Asian Institute of Technology</div></div>
+        <p>Awarded during my M.Eng. in Computer Science.</p>
+      </div>
+
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>Hiromichi Seya Prize for most outstanding performance among female graduates</b></div><div class="rec-date">Asian Institute of Technology</div></div>
+        <p>School of Engineering and Technology.</p>
+      </div>
+
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>H.M. King's Scholarship</b></div><div class="rec-date">Asian Institute of Technology</div></div>
+        <p>Full scholarship for my M.Eng. in Computer Science (2015–2017).</p>
+      </div>
+
+      <div class="rec">
+        <div class="rec-top"><div class="rec-title"><b>Summa Cum Laude</b></div><div class="rec-date">Assumption University</div></div>
+        <p>B.Eng. in Computer and Network Engineering (2010–2014).</p>
+      </div>
+    </section>
+
+    <footer id="copyright">© 2026 <b>Sanjana Jain</b></footer>
+  </main>
+</div>
+
+<script>
+  // Highlight the nav item for the section currently in view
+  (function () {
+    var ids = ['about', 'journey', 'skills', 'publications', 'recognition'];
+    var links = document.querySelectorAll('[data-s]');
+    function setActive(id) {
+      links.forEach(function (a) {
+        var on = a.getAttribute('data-s') === id;
+        a.classList.toggle('active', on);
+        var item = a.querySelector('.nav-item');
+        if (item) item.classList.toggle('active', on);
+      });
+    }
+    setActive('about');
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    ids.forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+  })();
+</script>
+</body>
+</html>
